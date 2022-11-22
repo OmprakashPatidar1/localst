@@ -11,7 +11,13 @@ function onSubmit(e){
         msg.innerHTML='Please enter all field';
         setTimeout(()=>msg.remove(),3000);
     }else{
-        localStorage.setItem('username',nameInput.value);
-        localStorage.setItem('email',emailInput.value);
+        var obj={
+            name:nameInput.value,
+            email:emailInput.value
+        }
+        var obj_serialized=JSON.stringify(obj);
+       localStorage.setItem('obj',obj_serialized)
+
+
     }
 }
